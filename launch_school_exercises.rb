@@ -2,6 +2,10 @@
 class MyCar
   attr_reader :year, :color, :model
   attr_accessor :speed 
+
+  def self.gas_mileage(miles, gallon)
+    miles / gallon
+  end
   
   def initialize(year, color, model)
     @year = year
