@@ -17,7 +17,7 @@ class MyCar
   end
 
   def to_s 
-    "This is a ${@year}, ${@color} colored ${@make} ${@model}"
+    "This is a #{@year}, #{@color} colored #{@make} #@model"
   end
   
   def ignition(key)
