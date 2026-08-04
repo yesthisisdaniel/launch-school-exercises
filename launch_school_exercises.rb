@@ -14,6 +14,10 @@ class MyCar
     @speed = 0
     @engine_status = "off"
   end
+
+  def to_s 
+    "This is a ${year}, ${color} colored (name of object) ${model}"
+  end
   
   def ignition(key)
     if key == "in"
