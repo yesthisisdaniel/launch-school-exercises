@@ -17,13 +17,12 @@ class MyCar
   end
 
   def to_s 
-    "This is a #{@year}, #{@color} colored #{@make} #@model"
+    "This is a #{year}, #{color} colored #{make} #{model}"
   end
   
   def ignition(key)
     if key == "in"
       @engine_status = "on"
-    end
     end
   
   def accelerate(kmh)
