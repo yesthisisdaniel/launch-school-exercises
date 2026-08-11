@@ -2,6 +2,12 @@ class Vehicle
   
   attr_reader :year, :color, :model, :make
   attr_accessor :speed 
+  
+  @@number_of_descendants = 0
+  
+  def self.print_number_of_descendants
+    p @@number_of_descendants
+  end
 
   def initialize(year, color, make, model)
     @year = year
@@ -10,6 +16,7 @@ class Vehicle
     @make = make
     @speed = 0
     @engine_status = "off"
+    @@number_of_descendants += 1
   end
   
    def self.gas_mileage(miles, gallon)
@@ -47,36 +54,12 @@ class Vehicle
 end
 
 class MyCar < Vehicle
-  attr_reader :year, :color, :model, :make
-  attr_accessor :speed 
-
-  def initialize(year, color, make, model)
-    @year = year
-    @color = color
-    @model = model
-    @make = make
-    @speed = 0
-    @engine_status = "off"
-  end
-
   def to_s 
     "This is a #{year}, #{color} colored #{make} #{model}"
   end
 end
 
 class MyTruck < Vehicle
-  attr_reader :year, :color, :model, :make
-  attr_accessor :speed 
-
-  def initialize(year, color, make, model)
-    @year = year
-    @color = color
-    @model = model
-    @make = make
-    @speed = 0
-    @engine_status = "off"
-  end
-
   def to_s 
     "This is a #{year}, #{color} colored #{make} #{model}"
   end
