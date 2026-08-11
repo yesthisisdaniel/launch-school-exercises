@@ -1,4 +1,3 @@
-# Your code goes here
 module Towable
   def can_tow?(kilograms)
     kilograms < 1000
@@ -11,14 +10,13 @@ class Vehicle
   attr_accessor :speed, :engine_status
   
   @@number_of_descendants = 0
-  @creation = Time.new
   
   def self.print_number_of_descendants
     p @@number_of_descendants
   end
 
   def age
-    age_calc
+    "Your #{self.make} #{self.model} is #{age_calc} years old!
   end
 
   def initialize(year, color, make, model)
