@@ -1,5 +1,6 @@
+# Your code goes here
 module Towable
-  def can_tow(kilograms)
+  def can_tow?(kilograms)
     kilograms < 1000
   end
 end
@@ -23,6 +24,10 @@ class Vehicle
     @speed = 0
     @engine_status = "off"
     @@number_of_descendants += 1
+  end
+  
+  def to_s 
+    "This is a #{year}, #{color} colored #{make} #{model}"
   end
   
    def self.gas_mileage(miles, gallon)
@@ -60,16 +65,8 @@ class Vehicle
 end
 
 class MyCar < Vehicle
-  
-  def to_s 
-    "This is a #{year}, #{color} colored #{make} #{model}"
-  end
 end
 
 class MyTruck < Vehicle
   include Towable
-  
-  def to_s 
-    "This is a #{year}, #{color} colored #{make} #{model}"
-  end
 end
