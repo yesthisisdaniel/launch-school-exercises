@@ -1,7 +1,13 @@
+module Towable
+  def can_tow(kilograms)
+    kilograms < 1000
+  end
+end
+
 class Vehicle
   
   attr_reader :year, :color, :model, :make
-  attr_accessor :speed 
+  attr_accessor :speed, :engine_status
   
   @@number_of_descendants = 0
   
@@ -54,12 +60,15 @@ class Vehicle
 end
 
 class MyCar < Vehicle
+  
   def to_s 
     "This is a #{year}, #{color} colored #{make} #{model}"
   end
 end
 
 class MyTruck < Vehicle
+  include Towable
+  
   def to_s 
     "This is a #{year}, #{color} colored #{make} #{model}"
   end
